@@ -5,6 +5,10 @@
         <div class="result num">{{result}}</div>
     </div>
 
+        <button mat-icon-button class="mtbtn" routerLink="/history">
+            <mat-icon>history</mat-icon>
+        </button>
+
     <div class="inputButton" >
         <div class="btn_box">
             <button type="button" class="num_btn f0"  (click)="memory('r')" >MR</button>
@@ -35,11 +39,12 @@
             <button type="button" class="num_btn f4"  (click)="sign_change('+')" >+</button>
         </div>
         <div class="btn_box">
-            <button type="button" class="num_btn f0"  (click)="special_count('𝝿')" >𝝿</button>
+            <button type="button" class="num_btn f0"  (click)="history('=')" >=</button>
             <button type="button" class="num_btn f1" (click)="String_addition(0)">0</button>
             <button type="button" class="num_btn f2" (click)="String_addition('00')">00</button>
             <button type="button" class="num_btn f3" >.</button>
             <button type="button" class="num_btn f4"  (click)="sign_change('-')" >-</button>
         </div>
-        
+
 </div>
+

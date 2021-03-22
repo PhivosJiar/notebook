@@ -1,0 +1,54 @@
+.note{
+    position:relative;
+    margin: auto;
+    width:30vw;
+    height:80vh;
+    
+    text-overflow: ellipsis; 
+    overflow: hidden; 
+    display: block; 
+    white-space: nowrap;
+    
+    border:2px #CECEFF;
+    border-radius: 10px;
+    border-style: solid;  
+}
+    
+.viewnum{
+    width: auto;
+    height: 76vh;
+    margin:1vh 0.5vw 0.2vh 0.5vw ;
+    border:2px #CECEFF;
+    border-radius: 10px;
+    border-style: solid;
+    text-align: right;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap
+}
+
+.detail {
+    font-size:10vmin;
+    height:10vh;
+}
+
+.mtbtn{
+    background-color: #ffffff;
+    color:#B9B9FF;
+}
+
+.mtbtn :hover{
+    background-color: #B9B9FF;
+}
+
+li{
+    list-style-type:none;
+    font-size: 5vh;
+    // color: #B9B9FF;
+    flex-basis: auto;
+}
+
+li :hover{
+    background-color: #B9B9FF;
+}

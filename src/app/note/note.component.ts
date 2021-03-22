@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-note',
   templateUrl: './note.component.html',
@@ -11,14 +12,17 @@ export class NoteComponent implements OnInit {
 
   num1='';num2='';fuhow ='';detail_num='';
   result=0;mnum=0;
+  todo : string[] = [];
+
+
 
   constructor() { }
 
   ngOnInit(): void {
-
+  this.todo=JSON.parse(localStorage.getItem("todolist")|| '{}');
   }
 
-  count() {
+  count() { //一般四則運算
     switch(this.fuhow){
       case "+":
         this.result = parseFloat(this.num1) + parseFloat(this.num2);
@@ -38,7 +42,7 @@ export class NoteComponent implements OnInit {
   }
 
 
-   special_count(tempfuhow:any){
+   special_count(tempfuhow:any){//特殊符號運算
     switch(tempfuhow){
       case "^":
       if(this.result !=0 ){
@@ -47,19 +51,22 @@ export class NoteComponent implements OnInit {
       else{
         this.result=Math.pow(parseFloat(this.num1),2);
       }
+      this.sign_change(tempfuhow);
       break;
     case "√":
       this.result = Math.pow(parseFloat(this.num1),0.5);
+      this.sign_change(tempfuhow);
       break;
     case "log":
       this.result = Math.log(parseFloat(this.num1));
+      this.sign_change(tempfuhow);
       break;
-    case "𝝿":
-      this.result = parseFloat(this.num1) * Math.PI;
+    case "=":
+ 
       break;
+    }
   }
-}
-  String_addition(tempnum: any){
+  String_addition(tempnum: any){//計算細節
     if(this.fuhow == ''){
         this.num1 += tempnum;
         this.detail_num +=tempnum;
@@ -71,7 +78,7 @@ export class NoteComponent implements OnInit {
     }
   }
 
-  sign_change(tempsign: any){
+  sign_change(tempsign: any){//變更符號
     this.fuhow = tempsign;
     this.detail_num += ' ' + tempsign + ' ';
     if(this.num2 != ''){
@@ -80,7 +87,7 @@ export class NoteComponent implements OnInit {
     }
   }
 
-  onchange(){
+  onchange(){//呼叫運算邏輯
     if(this.fuhow != ''){
       this.count();
     }
@@ -89,7 +96,7 @@ export class NoteComponent implements OnInit {
     }
   }
 
-  memory(msign:any){
+  memory(msign:any){//M+等功能
     switch(msign){
       case '+':
         if(this.result !=0){
@@ -122,8 +129,18 @@ export class NoteComponent implements OnInit {
     }
   }
 
-  clear(){
+  clear(){//清空資料
     this.num1='';  this.num2=''; this.fuhow ='';this.detail_num='';
     this.result=0;
+  }
+
+  history(tempfuhow:any){//歷史計算資訊
+    switch(tempfuhow){
+      case "=":
+        this.todo.push(this.detail_num + "=" + this.result);
+        localStorage.setItem('todolist',JSON.stringify(this.todo));
+
+        this.detail_num=this.result.toString();
+    }
   }
 }
