@@ -4,8 +4,8 @@
             <mat-icon>reply</mat-icon>
         </button>
         
-        <li *ngFor="let item of todo">
-            <b> {{item}} </b>           
+        <li *ngFor="let item of note">
+            <b (click)="result_back()"> {{item.title}} = {{item.value}}</b>           
         </li>
 
     </div>

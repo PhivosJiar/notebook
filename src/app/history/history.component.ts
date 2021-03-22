@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-history',
@@ -7,17 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
-  todo : string[] = [];
+  note : any[] = [];
 
-  constructor() { }
+  constructor(
+    private route:ActivatedRoute,
+    private router:Router
+  ) { }
 
   ngOnInit(): void {
     this.hostoryItem();
   }
 
-  hostoryItem(){
-    this.todo=JSON.parse(localStorage.getItem('todolist')|| '{}');
+  hostoryItem(){//抓取localstorage中的歷史資訊
+    this.note=JSON.parse(localStorage.getItem('note')|| '{}');
   }
 
-
+  result_back(){
+    this.router.navigate(['/']);
+  }
 }

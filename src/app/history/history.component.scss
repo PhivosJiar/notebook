@@ -4,8 +4,6 @@
     width:30vw;
     height:80vh;
     
-    text-overflow: ellipsis; 
-    overflow: hidden; 
     display: block; 
     white-space: nowrap;
     
@@ -15,6 +13,9 @@
 }
     
 .viewnum{
+    text-overflow: ellipsis; 
+    overflow:scroll; 
+    
     width: auto;
     height: 76vh;
     margin:1vh 0.5vw 0.2vh 0.5vw ;

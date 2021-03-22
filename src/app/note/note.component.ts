@@ -12,22 +12,19 @@ export class NoteComponent implements OnInit {
 
   num1='';num2='';fuhow ='';detail_num='';
   result=0;mnum=0;
-  todo : string[] = [];
-
+  note  :any[] = [];
 
 
   constructor() { }
 
   ngOnInit(): void {
-  this.todo=JSON.parse(localStorage.getItem("todolist")|| '{}');
+    this.history("reload");
   }
 
   count() { //一般四則運算
     switch(this.fuhow){
       case "+":
         this.result = parseFloat(this.num1) + parseFloat(this.num2);
-        // var str = 'Tom';
-        // localStorage.setItem('myName',str);
         break;
       case "-":
         this.result = parseFloat(this.num1) - parseFloat(this.num2);
@@ -134,13 +131,16 @@ export class NoteComponent implements OnInit {
     this.result=0;
   }
 
-  history(tempfuhow:any){//歷史計算資訊
+  history(tempfuhow:any){//歷史計算資
     switch(tempfuhow){
       case "=":
-        this.todo.push(this.detail_num + "=" + this.result);
-        localStorage.setItem('todolist',JSON.stringify(this.todo));
-
+        this.note.push({'title':this.detail_num , 'value' : this.result})
+        localStorage.setItem('note',JSON.stringify(this.note));
         this.detail_num=this.result.toString();
+        break;
+      case "reload":
+        this.note=JSON.parse(localStorage.getItem("note")|| '{}');
+        break;
     }
   }
 }
