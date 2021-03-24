@@ -5,7 +5,7 @@
         </button>
         
         <li *ngFor="let item of note">
-            <b (click)="result_back()"> {{item.title}} = {{item.value}}</b>           
+            <b (click)="result_back(item)" (ngModel)="value"> {{item.title}} = {{item.value}}</b> 
         </li>
 
     </div>

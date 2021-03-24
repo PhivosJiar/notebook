@@ -9,7 +9,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class HistoryComponent implements OnInit {
 
   note : any[] = [];
-
+  value ="";
   constructor(
     private route:ActivatedRoute,
     private router:Router
@@ -17,13 +17,20 @@ export class HistoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.hostoryItem();
+
   }
 
   hostoryItem(){//抓取localstorage中的歷史資訊
     this.note=JSON.parse(localStorage.getItem('note')|| '{}');
   }
 
-  result_back(){
-    this.router.navigate(['/']);
+  result_back(value:any){//傳值回去note 
+    this.router.navigate(['/'], {
+      queryParams: {
+        value: value.value
+      }
+    });
+    console.log(value);
   }
+
 }

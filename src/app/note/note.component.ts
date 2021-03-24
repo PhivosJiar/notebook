@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-note',
@@ -15,10 +15,19 @@ export class NoteComponent implements OnInit {
   note  :any[] = [];
 
 
-  constructor() { }
+  constructor(
+    private route:ActivatedRoute,
+    private router:Router
+  ) { }
 
   ngOnInit(): void {
     this.history("reload");
+    let value = this.route.snapshot.queryParams.value
+    if(value!=null){ //get hitstory component 傳回的value
+      this.num1=value.toString();
+      this.detail_num=value;
+    }
+
   }
 
   count() { //一般四則運算
@@ -63,6 +72,7 @@ export class NoteComponent implements OnInit {
       break;
     }
   }
+  
   String_addition(tempnum: any){//計算細節
     if(this.fuhow == ''){
         this.num1 += tempnum;
