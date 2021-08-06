@@ -13,7 +13,7 @@
 
 ## 下載/開啟專案
 
-確認Node.JS版本 需要為Node8.x 或 Node10.x，請在terminal輸入`node -v` 確認版本
+確認Node.JS版本 建議為Node8.x 或更高，請在terminal輸入`node -v` 確認版本
 
 確認是否有npm 客戶端，請在terminal輸入`npm -v`
 
