@@ -1,27 +1,21 @@
-# Note
+## 這是我第一天學習Angular所建立的練習專案
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+## 題目是"計算機"
+我給自己訂下需求 
 
-## Development server
+1、基本四則運算
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+2、隨輸入值變動，立刻渲染新的結果
 
-## Code scaffolding
+3、MR、MC等記憶功能、開根號及圓周率等運算
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+4、不與資料庫串接情況下，提供使用者儲存功能(包含下次回來要可以調用)
 
-## Build
+## 下載/開啟專案
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+確認Node.JS版本 需要為Node8.x 或 Node10.x，請在terminal輸入node -v 確認版本
 
-## Running unit tests
+確認是否有npm 客戶端，請在terminal輸入npm -v
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+安裝Angular Cli，請在terminal輸入npm install -g @angular/cli
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
