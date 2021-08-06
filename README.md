@@ -13,11 +13,15 @@
 
 ## 下載/開啟專案
 
-確認Node.JS版本 需要為Node8.x 或 Node10.x，請在terminal輸入node -v 確認版本
+確認Node.JS版本 需要為Node8.x 或 Node10.x，請在terminal輸入`node -v` 確認版本
 
-確認是否有npm 客戶端，請在terminal輸入npm -v
+確認是否有npm 客戶端，請在terminal輸入`npm -v`
 
-安裝Angular Cli，請在terminal輸入npm install -g @angular/cli
+安裝Angular Cli，請在terminal輸入`npm install -g @angular/cli`
 
-將套件安裝回專案中，執行npm install
+將套件安裝回專案中，執行`npm install`
+
+若有套件有依賴漏洞，請執行`npm audit fix`
+
+執行`npm serve`開啟server
 
