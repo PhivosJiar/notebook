@@ -19,3 +19,5 @@
 
 安裝Angular Cli，請在terminal輸入npm install -g @angular/cli
 
+將套件安裝回專案中，執行npm install
+
